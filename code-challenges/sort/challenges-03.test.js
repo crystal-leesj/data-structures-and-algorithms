@@ -149,23 +149,23 @@ Write a function named sortMeetingsByDay that takes in an array of objects, each
 Sort the meetings by the day on which they happen, Monday-Friday. It does not matter which order meetings come in on a particular day. For example, if there are two meetings on Monday, it does not matter which comes first.
 ------------------------------------------------------------------------------------------------ */
 
-function Meeting(dayOfWeek, start, end) {
-  this.dayOfWeek = dayOfWeek;
-  this.start = start;
-  this.end = end;
-}
-const meetings = [
-  new Meeting('Monday', '0900', '1000'),
-  new Meeting('Wednesday', '1300', '1500'),
-  new Meeting('Tuesday', '1145', '1315'),
-  new Meeting('Wednesday', '0930', '1000'),
-  new Meeting('Monday', '0900', '0945'),
-  new Meeting('Friday', '1200', '1345'),
-];
+// function Meeting(dayOfWeek, start, end) {
+//   this.dayOfWeek = dayOfWeek;
+//   this.start = start;
+//   this.end = end;
+// }
+// const meetings = [
+//   new Meeting('Monday', '0900', '1000'),
+//   new Meeting('Wednesday', '1300', '1500'),
+//   new Meeting('Tuesday', '1145', '1315'),
+//   new Meeting('Wednesday', '0930', '1000'),
+//   new Meeting('Monday', '0900', '0945'),
+//   new Meeting('Friday', '1200', '1345'),
+// ];
 
-const sortMeetingsByDay = (arr) => {
+// const sortMeetingsByDay = (arr) => {
   
-};
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -177,9 +177,9 @@ Sort the meetings in the order that they start. If two meetings start at the sam
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
-const sortSchedule = (arr) => {
-  // Solution code here...
-};
+// const sortSchedule = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -287,25 +287,25 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
-  test('It should sort meetings by the day on which they happen', () => {
-    const sortedMeetings = sortMeetingsByDay(meetings);
-    expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
-    expect(sortedMeetings[2]).toStrictEqual(new Meeting('Tuesday', '1145', '1315'));
-    expect(sortedMeetings.slice(3,5)).toEqual(expect.arrayContaining([new Meeting('Wednesday', '0930', '1000'), new Meeting('Wednesday', '1300', '1500')]));
-    expect(sortedMeetings[5]).toStrictEqual(new Meeting('Friday', '1200', '1345'));
-  });
-});
+// xdescribe('Testing challenge 9', () => {
+//   test('It should sort meetings by the day on which they happen', () => {
+//     const sortedMeetings = sortMeetingsByDay(meetings);
+//     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
+//     expect(sortedMeetings[2]).toStrictEqual(new Meeting('Tuesday', '1145', '1315'));
+//     expect(sortedMeetings.slice(3,5)).toEqual(expect.arrayContaining([new Meeting('Wednesday', '0930', '1000'), new Meeting('Wednesday', '1300', '1500')]));
+//     expect(sortedMeetings[5]).toStrictEqual(new Meeting('Friday', '1200', '1345'));
+//   });
+// });
 
-xdescribe('Testing challenge 10', () => {
-  test('It should sort meetings by when they happen', () => {
-    expect(sortSchedule(meetings)).toStrictEqual([
-      new Meeting('Monday', '0900', '0945'),
-      new Meeting('Monday', '0900', '1000'),
-      new Meeting('Tuesday', '1145', '1315'),
-      new Meeting('Wednesday', '0930', '1000'),
-      new Meeting('Wednesday', '1300', '1500'),
-      new Meeting('Friday', '1200', '1345'),
-    ]);
-  });
-});
+// xdescribe('Testing challenge 10', () => {
+//   test('It should sort meetings by when they happen', () => {
+//     expect(sortSchedule(meetings)).toStrictEqual([
+//       new Meeting('Monday', '0900', '0945'),
+//       new Meeting('Monday', '0900', '1000'),
+//       new Meeting('Tuesday', '1145', '1315'),
+//       new Meeting('Wednesday', '0930', '1000'),
+//       new Meeting('Wednesday', '1300', '1500'),
+//       new Meeting('Friday', '1200', '1345'),
+//     ]);
+//   });
+// });
