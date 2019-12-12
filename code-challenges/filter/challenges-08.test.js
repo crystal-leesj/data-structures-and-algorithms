@@ -9,7 +9,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  return arr.filter(element => element % 2 === 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  return arr.filter(element => /[aeiou]/g.test(element));
 };
 
 
@@ -37,7 +37,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(element => !forbiddenValues.includes(element));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter(data => minBaseStat < data.baseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +92,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let results = [];
+  arr.filter(data => {
+    if (minBaseStat < data.baseStat) {
+      results.push(data.stat.name);
+    }
+  })
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +151,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter(data => !data.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -256,7 +262,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-describe('Testing challenge 7', () => {
+xdescribe('Testing challenge 7', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
