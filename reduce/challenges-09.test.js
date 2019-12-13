@@ -154,7 +154,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let value = arr.reduce(
+    (accumulator, currentValue) => {
+      accumulator.sum += currentValue;
+      return accumulator;
+    },
+    { count: 0, sum: 0 }
+  );
+  return value.sum / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,7 +182,13 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, currentValue) => {
+    if (isPrime(currentValue)) {
+      return (accumulator += 1);
+    } else {
+      return accumulator;
+    }
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -270,13 +283,13 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
