@@ -9,7 +9,11 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map(val => {
+    let splittedArr = val.split('');
+    splittedArr[0] = splittedArr[0].toUpperCase();
+    return splittedArr.join('');
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +88,21 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let lukeMass;
+  let result = '';
+  arr.forEach(charObj => {
+    if(charObj.name === 'Luke Skywalker') {
+      lukeMass = parseInt(charObj.mass);
+    }
+    if (charObj.mass > lukeMass) {
+      if (result === '') {
+        result = charObj.name;
+      } else {
+        result = result + ' - ' + charObj.name;
+      }
+    }
+  })
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +120,13 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a,b) => {
+    if (a[property] < b[property]) {
+      return -1;
+    } else if (a[property] > b[property]) {
+      return 1;
+    } else return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +142,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  return /^https:\/\/\w+/.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,14 +188,14 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
@@ -200,7 +224,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should check if url is https', () => {
 
     expect(isSecure('http://www.insecure.com')).toBe(false);
