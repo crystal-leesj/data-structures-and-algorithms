@@ -9,4 +9,4 @@ If the length of original array is 0 or 1, it will return the original array. If
 Big O : O(n)
 
 ## Solution
-[array-reverse]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "array-reverse"
+![array-reverse](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/array-reverse.jpg "array-reverse")
