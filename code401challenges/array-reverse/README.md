@@ -1,11 +1,12 @@
 # Reverse an Array
-<!-- Short summary or background information -->
+An int of array is given. Reverse the array.
 
 ## Challenge
-<!-- Description of the challenge -->
+Write a function called ***reverseArray*** which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+If the length of original array is 0 or 1, it will return the original array. If not, it will create a new array. Then loop though the original array and add the element to new array in backward order.
+Big O : O(n)
 
 ## Solution
-<!-- Embedded whiteboard image -->
+[array-reverse]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "array-reverse"
