@@ -10,9 +10,13 @@ public class ArrayReverse {
 
   // the method you should write, to reverse an array
   public static int[] reverseArray(int[] inputArray) {
-    if (inputArray.length == 1) {
+    if (inputArray.length == 0) {
       return inputArray; 
-    } else {
+    } 
+    else if (inputArray.length == 1) {
+      return inputArray;
+    }
+    else {
       int[] newArr = new int[inputArray.length];
       int j = inputArray.length;
       for (int i = 0; i < inputArray.length; i++) {
