@@ -10,3 +10,6 @@ Becauce there was a single for loop, it would be O(n)
 
 ## Solution
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/insertShiftArray.jpg "Logo Title Text 1")
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/ArrayShift.java)
