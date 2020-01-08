@@ -1,3 +1,4 @@
 # data-structures-and-algorithms
 
-[I'm an inline-style link](https://www.google.com)
+1. [Array Reverse](https://www.google.com)
+2. [Array Shift](https://www.google.com)
