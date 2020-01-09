@@ -12,7 +12,7 @@ public class BinarySearchTest {
         assertEquals(2, actual);
     }
 
-    @Test public void testBinarySearch2() {
+    @Test public void testBinarySearchNonExist() {
         int[] testArr = new int[] {11,22,33,44,55,66,77};
         int testEle = 90;
         int actual = BinarySearch.binarySearch(testArr, testEle);
