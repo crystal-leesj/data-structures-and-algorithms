@@ -27,7 +27,8 @@ O(n)
 Becauce there was a single for while loop, it would be O(n)
 
 ## Solution
-![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/insertShiftArray.jpg "Logo Title Text 1")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/array-binary-search1.jpg "binarySearch1")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/array-binary-search2.jpg "binarySearch2")
 
 ## Link to code
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/BinarySearch.java)
