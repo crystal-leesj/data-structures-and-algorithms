@@ -6,16 +6,19 @@ public class BinarySearch {
     public static int binarySearch(int[] inputArray, int inputNumber) {
 
         int leftIndex = 0;
-        int rightIndex = inputArray.length-1;
+
+        int rightIndex = inputArray.length - 1;
+
         while (leftIndex <= rightIndex) {
-            int middleIndex = (int) Math.ceil((leftIndex + (rightIndex - leftIndex))/2.0);
+            int middleIndex = (leftIndex + rightIndex)/2;
+
             if (inputArray[middleIndex] == inputNumber) {
                 return middleIndex;
             }
-            if (inputArray[middleIndex] < inputNumber) {
+            else if (inputArray[middleIndex] < inputNumber) {
                 leftIndex = middleIndex + 1;
             }
-            else {
+            else if (inputArray[middleIndex] > inputNumber) {
                 rightIndex = middleIndex - 1;
             }
         }
