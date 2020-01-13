@@ -1,12 +1,6 @@
 package code401challenges.linkedList;
 
 public class LinkedList {
-//    public static void main(String[] args) {
-//        LinkedList llist = new LinkedList();
-//        llist.insert(7);
-//
-//    }
-
     Node head;
 
     public boolean isEmpty(){
@@ -53,7 +47,6 @@ public class LinkedList {
     }
 
     public String toString() {
-//        "{ a } -> { b } -> { c } -> NULL"
         String result = "";
         Node new_node = head;
         while (new_node != null) {
@@ -63,6 +56,5 @@ public class LinkedList {
         result += "NULL";
         return result;
     }
-
 
 }
