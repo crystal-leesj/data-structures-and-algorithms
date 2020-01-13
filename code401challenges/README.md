@@ -58,7 +58,7 @@ Big O is O(1).
 2. include Singly Linked Lists
   - Define a method called `include` which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 3. toString Singly Linked Lists
-  - Define a method called `toString` (or `__str__` in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
+  - Define a method called `toString` which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
   ```
   "{ a } -> { b } -> { c } -> NULL"
   ```
