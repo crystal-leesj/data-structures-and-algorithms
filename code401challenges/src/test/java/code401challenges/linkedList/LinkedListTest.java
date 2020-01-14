@@ -276,7 +276,7 @@ public class LinkedListTest {
         int targetVal = 1;
         int newVal = 5;
         actualLL.insertAfter(targetVal, newVal);
-        System.out.println("actualLL = " + actualLL.toString());
+//        System.out.println("actualLL = " + actualLL.toString());
 
         assertEquals(expectedLength, actualLL.length());
         assertTrue(actualLL.include(newVal));
