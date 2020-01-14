@@ -1,13 +1,14 @@
 package code401challenges.linkedList;
 
 public class LinkedList {
-    Node head;
+    public Node head;
 
+    // Helper function to check if the LL is empty.
     public boolean isEmpty(){
         return length() == 0;
     }
 
-
+    // Helper function to check length of LL.
     public int length() {
         int length = 0;
         Node current = head;
@@ -16,13 +17,6 @@ public class LinkedList {
             current = current.next;
         }
         return length;
-    }
-
-
-    class Node {
-        int data;
-        Node next;
-        Node(int d) { data = d; next = null;}
     }
 
     public Node insert(int new_data) {
