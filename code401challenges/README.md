@@ -33,6 +33,7 @@ Becauce there was a single for while loop, it would be O(n)
 ## Link to code
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/BinarySearch.java)
 
+***
 
 ## Lab 5: Singly Linked Lists
 # Singly Linked List
@@ -65,3 +66,55 @@ Big O is O(1).
  
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java)
 
+***
+
+# Challenge Summary
+Given Linked List, add a new node with the given value.
+
+## Challenge Description
+`.append(value)` which adds a new node with the given `value` to the end of the list
+
+## Approach & Efficiency
+Bog O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/linkedlist-append.jpg "LL append")
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java
+
+***
+
+# Challenge Summary
+Given Linked List, insert a new node with the given value before the target value.
+
+## Challenge Description
+`.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
+
+## Approach & Efficiency
+Bog O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/linkedlist-inset-before.jpg "LL inser before")
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java
+
+***
+
+# Challenge Summary
+Given Linked List, insert a new node with the given value after the target value.
+
+## Challenge Description
+`.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+
+## Approach & Efficiency
+Bog O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/linkedlist-insert-after.jpg "LL insert after")
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java
+
+***
