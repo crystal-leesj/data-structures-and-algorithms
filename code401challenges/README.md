@@ -129,7 +129,7 @@ Write a method for the Linked List class which takes a number, `k`, as a paramet
 Bog O(n)
 
 ## Solution
-![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/array-binary-search1.jpg "LL getNthFromEnd")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/linkedlist-kth-value.jpg "LL getNthFromEnd")
 
 
 ## Link to code
