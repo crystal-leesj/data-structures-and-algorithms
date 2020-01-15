@@ -133,6 +133,6 @@ Bog O(n)
 
 
 ## Link to code
-[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/LinkedList.java)
 
 ***
