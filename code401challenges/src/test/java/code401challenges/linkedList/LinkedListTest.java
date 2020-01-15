@@ -282,4 +282,58 @@ public class LinkedListTest {
         assertTrue(actualLL.include(newVal));
         assertTrue(actualLL.include(targetVal));
     }
+
+    @Test public void testGet0thFromEnd() {
+        int expectedArg = 0;
+        int expected = 2;
+
+        LinkedList actualLL = new LinkedList();
+        assertTrue(actualLL.isEmpty());
+
+        actualLL.append(1);
+        actualLL.append(3);
+        actualLL.append(8);
+        actualLL.append(2);
+
+        System.out.println("actualLL = " + actualLL.toString());
+
+        int actual = actualLL.getNthFromEnd(expectedArg);
+        System.out.println("actual = " + actual);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testGet2ndFromEnd() {
+        int expectedArg = 2;
+        int expected = 3;
+
+        LinkedList actualLL = new LinkedList();
+        assertTrue(actualLL.isEmpty());
+
+        actualLL.append(1);
+        actualLL.append(3);
+        actualLL.append(8);
+        actualLL.append(2);
+
+        int actual = actualLL.getNthFromEnd(expectedArg);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testGetkthFromEnd_notExisting() {
+        int expectedArg = 6;
+        int expected = -1;
+        
+        LinkedList actualLL = new LinkedList();
+        assertTrue(actualLL.isEmpty());
+
+        actualLL.append(1);
+        actualLL.append(3);
+        actualLL.append(8);
+        actualLL.append(2);
+
+        int actual = actualLL.getNthFromEnd(expectedArg);
+
+        assertEquals(expected, actual);
+    }
 }
