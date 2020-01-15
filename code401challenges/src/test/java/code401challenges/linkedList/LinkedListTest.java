@@ -323,7 +323,7 @@ public class LinkedListTest {
     @Test public void testGetkthFromEnd_notExisting() {
         int expectedArg = 6;
         int expected = -1;
-        
+
         LinkedList actualLL = new LinkedList();
         assertTrue(actualLL.isEmpty());
 
