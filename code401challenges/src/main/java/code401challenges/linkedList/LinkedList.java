@@ -113,4 +113,32 @@ public class LinkedList {
         }
     }
 
+    public int getNthFromEnd(int k) {
+        int length = 0;
+        Node current = this.head;
+
+        while (current != null) {
+            current = current.next;
+            length++;
+        }
+
+        if (length < k) {
+            return -1;
+        }
+
+        int targetIndex = length - 1 - k;
+
+        current = this.head;
+
+        int counter = 0;
+        while (current != null) {
+            if (targetIndex == counter){
+                return current.data;
+            }
+            current = current.next;
+            counter++;
+        }
+        return -1;
+    }
+
 }
