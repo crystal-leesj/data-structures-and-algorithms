@@ -127,7 +127,6 @@ public class LinkedList {
         }
 
         int targetIndex = length - 1 - k;
-
         current = this.head;
 
         int counter = 0;
@@ -139,6 +138,49 @@ public class LinkedList {
             counter++;
         }
         return -1;
+    }
+
+    public static LinkedList mergeLists(LinkedList one, LinkedList two) {
+        if (one.head == null) return two;
+        if (two.head == null) return one;
+
+        boolean checkerListOne = false;
+        boolean checkerListTwo = false;
+
+        LinkedList result = new LinkedList();
+
+        while (one.head != null && two.head != null) {
+
+            result.append(one.head.data);
+//            System.out.println("result = " + result.toString());
+
+            result.append(two.head.data);
+//            System.out.println("result = " + result.toString());
+
+            one.head = one.head.next;
+            if (one.head == null) {
+                checkerListOne = true;
+            }
+            two.head = two.head.next;
+            if (two.head == null) {
+                checkerListTwo = true;
+            }
+        }
+        if (checkerListOne == true) {
+            while (two.head != null) {
+                result.append(two.head.data);
+                two.head = two.head.next;
+            }
+        }
+        if (checkerListTwo == true) {
+            while (one.head != null) {
+                result.append(one.head.data);
+                one.head = one.head.next;
+            }
+        }
+
+//        System.out.println("Final result = " + result.toString());
+        return result;
     }
 
 }
