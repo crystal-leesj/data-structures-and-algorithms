@@ -336,4 +336,75 @@ public class LinkedListTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test public void testMergeLists_sameLength() {
+        int[] expectedLL = {1,5,3,9,2,4};
+        int expectedLength = expectedLL.length;
+
+        LinkedList list1 = new LinkedList();
+        assertTrue(list1.isEmpty());
+        LinkedList list2 = new LinkedList();
+        assertTrue(list2.isEmpty());
+        list1.append(1);
+        list1.append(3);
+        list1.append(2);
+        list2.append(5);
+        list2.append(9);
+        list2.append(4);
+
+        LinkedList expected = LinkedList.mergeLists(list1, list2);
+        assertEquals(expectedLength, expected.length());
+        assertTrue(expected.include(1));
+        assertTrue(expected.include(5));
+        assertTrue(expected.include(3));
+        assertTrue(expected.include(9));
+        assertTrue(expected.include(2));
+        assertTrue(expected.include(4));
+    }
+
+    @Test public void testMergeLists_differentLength_shortListOne() {
+        int[] expectedLL = {1,5,3,9,4};
+        int expectedLength = expectedLL.length;
+
+        LinkedList list1 = new LinkedList();
+        assertTrue(list1.isEmpty());
+        LinkedList list2 = new LinkedList();
+        assertTrue(list2.isEmpty());
+        list1.append(1);
+        list1.append(3);
+        list2.append(5);
+        list2.append(9);
+        list2.append(4);
+
+        LinkedList expected = LinkedList.mergeLists(list1, list2);
+        assertEquals(expectedLength, expected.length());
+        assertTrue(expected.include(1));
+        assertTrue(expected.include(5));
+        assertTrue(expected.include(3));
+        assertTrue(expected.include(9));
+        assertTrue(expected.include(4));
+    }
+
+    @Test public void testMergeLists_differentLength_shortListTwo() {
+        int[] expectedLL = {1,5,3,9,2};
+        int expectedLength = expectedLL.length;
+
+        LinkedList list1 = new LinkedList();
+        assertTrue(list1.isEmpty());
+        LinkedList list2 = new LinkedList();
+        assertTrue(list2.isEmpty());
+        list1.append(1);
+        list1.append(3);
+        list1.append(2);
+        list2.append(5);
+        list2.append(9);
+
+        LinkedList expected = LinkedList.mergeLists(list1, list2);
+        assertEquals(expectedLength, expected.length());
+        assertTrue(expected.include(1));
+        assertTrue(expected.include(5));
+        assertTrue(expected.include(3));
+        assertTrue(expected.include(9));
+        assertTrue(expected.include(2));
+    }
 }
