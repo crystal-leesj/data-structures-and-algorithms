@@ -3,6 +3,7 @@ package code401challenges.stacksandqueues;
 public class Queue<T> {
 
     private Node<T> front;
+    private Node<T> rear;
 
     public Queue() {
         this.front = null;
@@ -34,12 +35,9 @@ public class Queue<T> {
         if (this.front == null) {
             this.front = new_node;
         } else {
-            Node<T> current = this.front;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = new_node;
+            this.rear.next = new_node;
         }
+        this.rear = new_node;
     }
 
     // Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
