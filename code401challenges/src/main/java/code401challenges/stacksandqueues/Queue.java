@@ -1,5 +1,7 @@
 package code401challenges.stacksandqueues;
 
+import java.util.NoSuchElementException;
+
 public class Queue<T> {
 
     private Node<T> front;
@@ -14,6 +16,9 @@ public class Queue<T> {
     }
 
     public Node<T> peek() {
+        if (this.front == null) {
+            throw new NoSuchElementException();
+        }
         return front;
     }
 
@@ -42,8 +47,11 @@ public class Queue<T> {
 
     // Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
     public T dequeue() {
+        if (this.front == null) {
+            throw new NoSuchElementException();
+        }
         Node<T> removedQueue = this.front;
-        this.front = front.next;
+        this.front = this.front.next;
         return removedQueue.value;
     }
 }

@@ -1,5 +1,7 @@
 package code401challenges.stacksandqueues;
 
+import java.util.EmptyStackException;
+
 public class Stack<T> {
     private Node<T> top;
 
@@ -8,7 +10,11 @@ public class Stack<T> {
     }
 
     public Node<T> peek() {
-        return top;
+        if (this.top == null) {
+            throw new EmptyStackException();
+        } else {
+            return top;
+        }
     }
 
     public void push(T new_value) {
@@ -18,6 +24,9 @@ public class Stack<T> {
     }
 
     public T pop() {
+        if (this.top == null) {
+            throw new EmptyStackException();
+        }
         Node<T> popped = this.top;
         this.top = top.next;
 //        popped.next = null;
@@ -25,11 +34,7 @@ public class Stack<T> {
     }
 
     public boolean isEmpty() {
-        if (this.top == null) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.top == null;
     }
 
 }
