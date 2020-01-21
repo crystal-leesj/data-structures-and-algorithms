@@ -49,9 +49,13 @@ public class Queue<T> {
     public T dequeue() {
         if (this.front == null) {
             throw new NoSuchElementException();
+        } else {
+            Node<T> removedQueue = this.front;
+            this.front = this.front.next;
+            if (this.front == null) {
+                this.rear = null;
+            }
+            return removedQueue.value;
         }
-        Node<T> removedQueue = this.front;
-        this.front = this.front.next;
-        return removedQueue.value;
     }
 }
