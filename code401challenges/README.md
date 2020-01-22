@@ -312,7 +312,7 @@ The `Stack` instances have only `push`, `pop`, and `peek` methods. You should us
 - O(n)
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/pseudoQueue.jpg "PseudoQueue")
 
 ## Link to code
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/stacksAndQueues/Queue.java)
@@ -331,9 +331,9 @@ Create a class called AnimalShelter which holds only dogs and cats. The shelter 
 - O(n)
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/animalShelter.jpg "animal shelter")
 
 ## Link to code
-[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/stacksAndQueues/Queue.java)
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/AnimalShelter.java)
 
 ***
