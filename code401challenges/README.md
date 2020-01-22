@@ -316,3 +316,24 @@ The `Stack` instances have only `push`, `pop`, and `peek` methods. You should us
 
 ## Link to code
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/stacksAndQueues/Queue.java)
+
+***
+
+# Challenge Summary
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+
+## Challenge Description
+- `enqueue(animal)`: adds `animal` to the shelter. `animal` can be either a dog or a cat object.
+- `dequeue(pref)`: returns either a dog or a cat. If `pref` is not `"dog"` or `"cat"` then return null.
+
+## Approach & Efficiency
+- O(1)
+- O(n)
+
+## Solution
+<!-- Embedded whiteboard image -->
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/stacksAndQueues/Queue.java)
+
+***
