@@ -10,5 +10,6 @@
 
 5. [Queue](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/stacksandqueues/Queue.java)
 
-5. [Animal shelter](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/AnimalShelter.java)
+6. [Animal shelter](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/AnimalShelter.java)
 
+7. [MultiBracket Validation](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/MultiBracketValidation.java)
