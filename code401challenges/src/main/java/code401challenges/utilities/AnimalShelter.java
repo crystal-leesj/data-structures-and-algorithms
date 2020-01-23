@@ -1,27 +1,38 @@
 package code401challenges.utilities;
 
-import java.util.Stack;
+import java.util.LinkedList;
 
-public class AnimalShelter<T> {
-    private Stack<T> stack1;
-    private Stack<T> stack2;
+// I changed my code based on Michelle's solution.
+
+public class AnimalShelter {
+    static class Dog {};
+    static class Cat {};
+
+    private LinkedList<Dog> dogs;
+    private LinkedList<Cat> cats;
 
     public AnimalShelter() {
-        this.stack1 = new Stack<>();
-        this.stack2 = new Stack<>();
+        this.dogs = new LinkedList<>();
+        this.cats = new LinkedList<>();
     }
 
-    public void enqueue(T animal) {
-        stack1.push(animal);
+    public void enqueue(Dog d) {
+        this.dogs.add(d);
     }
 
-    public T dequeue(T pref) {
-        if (pref != "cat" && pref != "dog") {
-            return null;
+    public void enqueue(Cat c) {
+        this.cats.add(c);
+    }
+
+    public <T> T dequeue(Class<T> pref) {
+        if (pref == Dog.class) {
+            return (T) this.dogs.pop();
         }
-        while (!stack1.isEmpty()) {
-            stack2.push(stack1.pop());
+        if (pref == Cat.class) {
+            return (T)this.cats.pop();
         }
-        return stack2.pop();
+        else {
+            throw new IllegalArgumentException("The shelter only accepts dogs and cats.");
+        }
     }
 }
