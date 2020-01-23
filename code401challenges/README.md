@@ -337,3 +337,24 @@ Create a class called AnimalShelter which holds only dogs and cats. The shelter 
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/AnimalShelter.java)
 
 ***
+
+# Challenge Summary
+Multi-bracket Validation.
+
+## Challenge Description
+Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+
+- Round Brackets : `()`
+- Square Brackets : `[]`
+- Curly Brackets : `{}`
+
+## Approach & Efficiency
+O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/bracketValidation.jpg "animal shelter")
+
+## Link to code
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/MultiBracketValidation.java)
+
+***
