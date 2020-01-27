@@ -8,7 +8,7 @@ public class BinarySearchTree {
     public IntNode root;
 
     public void insert(int key) {
-        root = insert(root, key);
+        this.root = insert(root, key);
     }
 
     private IntNode insert(IntNode root, int new_value) {
