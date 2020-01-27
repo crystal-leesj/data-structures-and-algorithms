@@ -21,7 +21,7 @@ public class MultiBracketValidation {
                 stack.pop();
             }
         }
-
+//        System.out.println("stack.toString() = " + stack.toString());
         return stack.isEmpty();
     }
 }
