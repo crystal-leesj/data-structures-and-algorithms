@@ -2,7 +2,7 @@ package code401challenges.tree;
 
 import java.util.ArrayList;
 
-//RESOURCE: https://github.com/crystal-leesj/data-structures-and-algorithms/pull/39
+//RESOURCE: https://www.geeksforgeeks.org/binary-search-tree-data-structure/
 
 public class BinarySearchTree {
     public IntNode root;
