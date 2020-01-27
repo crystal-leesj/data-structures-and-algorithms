@@ -7,19 +7,19 @@ import java.util.ArrayList;
 public class BinarySearchTree {
     public IntNode root;
 
-    void insert(int key) {
-        root = add(root, key);
+    public void insert(int key) {
+        root = insert(root, key);
     }
 
-    public IntNode add(IntNode root, int new_value) {
+    private IntNode insert(IntNode root, int new_value) {
         if (root == null) {
             root = new IntNode(new_value);
             return root;
         }
         if (new_value < root.key) {
-            root.left = add(root.left, new_value);
+            root.left = insert(root.left, new_value);
         } else if (new_value > root.key) {
-            root.right = add(root.right, new_value);
+            root.right = insert(root.right, new_value);
         }
         return root;
     }
