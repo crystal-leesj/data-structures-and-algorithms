@@ -2,6 +2,8 @@ package code401challenges.tree;
 
 import java.util.ArrayList;
 
+//RESOURCE: https://github.com/crystal-leesj/data-structures-and-algorithms/pull/39
+
 public class BinarySearchTree {
     public IntNode root;
 
