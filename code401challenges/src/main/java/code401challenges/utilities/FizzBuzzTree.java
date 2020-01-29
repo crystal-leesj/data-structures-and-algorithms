@@ -8,7 +8,7 @@ public class FizzBuzzTree {
     public IntNode root;
 
     public void fizzBuzzTree(BinaryTree<Object> tree) {
-        this.root = fizzBuzzTree(tree.node);
+//        this.root = fizzBuzzTree(tree.node);
         
     }
 

@@ -378,3 +378,21 @@ BinarySearchTree - O(log2n)
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/tree)
 
 [Link to test code] (https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/test/java/code401challenges)
+
+***
+
+# Challenge Summary
+Breadth-first Traversal.
+
+## Challenge Description
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+## Approach & Efficiency
+O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/breadthFirstTraversals.jpg "breadthFirstTraversal")
+
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/tree)
+
+***

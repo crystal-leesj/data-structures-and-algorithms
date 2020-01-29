@@ -1,9 +1,11 @@
 package code401challenges.tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree<T> {
-    public TreeNode<T> node;
+    public TreeNode<T> root;
 
     public ArrayList<T> preOrder(TreeNode<T> node) {
         ArrayList<T> list = new ArrayList<>();
@@ -41,6 +43,24 @@ public class BinaryTree<T> {
             list.addAll(right);
 
             list.add(node.value);
+        }
+        return list;
+    }
+
+//    printLevelOrder
+    public ArrayList<T> breadthFirstTraversal(TreeNode<T> root) {
+        ArrayList<T> list = new ArrayList<>();
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode<T> tempNode = queue.poll();
+            list.add(tempNode.value);
+            if (tempNode.left != null) {
+                queue.add(tempNode.left);
+            }
+            if (tempNode.right != null) {
+                queue.add(tempNode.right);
+            }
         }
         return list;
     }
