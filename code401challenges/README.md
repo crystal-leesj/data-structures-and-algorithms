@@ -396,3 +396,19 @@ O(n)
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/tree)
 
 ***
+
+# Challenge Summary
+Find the Maximum Value in a Binary Tree
+
+## Challenge Description
+Write an instance method called `find-maximum-value`. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Approach & Efficiency
+O(n)
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/find-maximum-binary-tree.jpg "breadthFirstTraversal")
+
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/tree/BinaryTree.java)
+
+***

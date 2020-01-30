@@ -68,7 +68,24 @@ public class BinaryTree<T> {
         return list;
     }
 
-    public String printTree(ArrayList<Integer> list) {
+    public int findMaximumValue(TreeNode<T> root) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+        int max = (int) root.value;
+        int left_max = findMaximumValue(root.left);
+        int right_max = findMaximumValue(root.right);
+
+        if (left_max < right_max) {
+            max = right_max;
+        }
+        if (right_max < left_max) {
+            max = left_max;
+        }
+        return max;
+    }
+
+    public String printTreeList(ArrayList<Integer> list) {
         String result = "";
         for (Integer integer : list) {
             result += " " + integer;
