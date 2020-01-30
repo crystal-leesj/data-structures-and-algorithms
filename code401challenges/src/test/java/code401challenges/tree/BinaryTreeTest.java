@@ -48,4 +48,12 @@ public class BinaryTreeTest {
 //        System.out.println("Breadth First Traversal = " + tree.printTree(treeList));
         assertEquals(" 1 2 3 4 5", tree.printTree(treeList));
     }
+    
+    @Test
+    public void testBreadthFirstTraversal_empty() {
+        BinaryTree<Integer> tree = new BinaryTree<Integer>();
+        ArrayList<Integer> treeList = tree.breadthFirstTraversal(tree.root);
+        System.out.println("Breadth First Traversal = " + tree.printTree(treeList));
+        assertEquals("", tree.printTree(treeList));
+    }
 }
