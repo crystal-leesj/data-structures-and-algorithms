@@ -50,6 +50,9 @@ public class BinaryTree<T> {
 //    printLevelOrder
     public ArrayList<T> breadthFirstTraversal(TreeNode<T> root) {
         ArrayList<T> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
         Queue<TreeNode<T>> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
