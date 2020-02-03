@@ -6,7 +6,7 @@ public class IntNode {
     IntNode right = null;
 
     public IntNode(int item) {
-        key = item;
-        left = right = null;
+        this.key = item;
+        this.left = right = null;
     }
 }

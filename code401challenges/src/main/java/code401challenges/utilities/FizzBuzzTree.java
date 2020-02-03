@@ -4,36 +4,27 @@ import code401challenges.tree.IntNode;
 import code401challenges.tree.BinaryTree;
 import code401challenges.tree.TreeNode;
 
-public class FizzBuzzTree {
-    public IntNode root;
+public class FizzBuzzTree<T> {
 
-    public void fizzBuzzTree(BinaryTree<Object> tree) {
-//        this.root = fizzBuzzTree(tree.node);
-        
+    public static BinaryTree<Object> fizzBuzzTree(BinaryTree<Object> tree) {
+        fizzBuzzTree(tree.root);
+        return tree;
     }
 
-
-    private void fizzBuzzTree(IntNode root) {
+    private static void fizzBuzzTree(TreeNode<Object> root) {
+        if (root == null) {
+            throw new IllegalArgumentException("The argument cannot be null");
+        } else {
+            fizzBuzzTree(root.left);
+            fizzBuzzTree(root.right);
+            if ((Integer)root.value % 15 == 0) {
+                root.value = "FizzBuzz";
+            } else if ((Integer)root.value % 3 == 0) {
+                root.value = "Fizz";
+            } else if ((int)root.value % 5 == 0) {
+                root.value = "Buzz";
+            }
+        }
 
     }
-
-
-
-    //    public void insert(int key) {
-//        this.root = insert(root, key);
-//    }
-//
-//    private IntNode insert(IntNode root, int new_value) {
-//        if (root == null) {
-//            root = new IntNode(new_value);
-//            return root;
-//        }
-//        if (new_value < root.key) {
-//            root.left = insert(root.left, new_value);
-//        } else if (new_value > root.key) {
-//            root.right = insert(root.right, new_value);
-//        }
-//        return root;
-//    }
-
 }
