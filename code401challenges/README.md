@@ -448,6 +448,8 @@ Selection Sort is a sortig algorithm that traverses the array multiple times as 
     - No additional space is being created. This array is being sorted in place…keeping the space at constant O(1).
 
 ## Solution
-![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/fizzBuzzTree.jpg "FizzBuzzTree")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/selection-sort1.jpg "selection sort")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/selection-sort2.jpg "selection sort")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/selection-sort3.jpg "selection sort")
 
 ***
