@@ -434,3 +434,20 @@ O(n)
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/utilities/FizzBuzzTree.java)
 
 ***
+
+# Challenge Summary
+Selection Sort
+
+## Challenge Description
+Selection Sort is a sortig algorithm that traverses the array multiple times as it slowly builds out the sorting sequence. The traversal keeps track of the minimum value and places it in the front of the array which should be incrimentally sorted.
+
+## Approach & Efficiency
+- Time: O(n^2)
+    - The basic operaiton of this algorithm is comparison. This will happen n number of times…concluding the algorithm to be n squared.
+- Space: O(1)
+    - No additional space is being created. This array is being sorted in place…keeping the space at constant O(1).
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/fizzBuzzTree.jpg "FizzBuzzTree")
+
+***
