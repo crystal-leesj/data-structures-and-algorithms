@@ -1,15 +1,6 @@
 package code401challenges.sortMerge;
 
-import java.util.Arrays;
-
 public class MergeSort {
-
-    public static void main(String[] args) {
-        int[] startArr = new int[] {8,4,23,42,16,15};
-        System.out.println(Arrays.toString(startArr));
-        int[] endArr = mergeSort(startArr);
-        System.out.println(Arrays.toString(endArr));
-    }
 
     public static int[] mergeSort(int[] arr) {
         int n = arr.length;
