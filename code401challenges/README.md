@@ -453,3 +453,24 @@ Selection Sort is a sortig algorithm that traverses the array multiple times as 
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/selection-sort3.jpg "selection sort")
 
 ***
+# Challenge Summary
+Merge Sort
+
+## Challenge Description
+Merge sort is a “divide and conquer” algorithm wherein we first divide the problem into subproblems. When the solutions for the subproblems are ready, we combine them together to get the final solution to the problem.
+- The algorithm can be described as the following 2 step process:
+    - `Divide`: In this step, we divide the input array into 2 halves, the pivot being the midpoint of the array. This step is carried out recursively for all the half arrays until there are no more half arrays to divide.
+    - `Conquer`: In this step, we sort and merge the divided arrays from bottom to top and get the sorted array.
+    
+## Approach & Efficiency
+   - Time: 2T(n/2) + O(n)
+       - Because merge sort is a recursive algorithm, 2T(n/2) corresponds to the time required to sort the sub-arrays and O(n) time to merge the entire array.
+   - Space: O(n)
+       - The sort algorithm is creating temporary arrays in every recursive call
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/merge-sort1.jpg "merge sort")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/merge-sort2.jpg "merge sort")
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/merge-sort3.jpg "merge sort")
+
+***
