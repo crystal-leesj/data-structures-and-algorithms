@@ -1,8 +1,5 @@
-package code401challenges.sort;
+package code401challenges.sortInsertion;
 
-import static org.junit.Assert.*;
-
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -30,7 +27,7 @@ public class InsertionSortTest {
     public void testSelectionSort_few_uniques() {
         int[] actualArr = new int[] {5, 12, 7, 5, 5, 7};
         InsertionSort.selectionSort(actualArr);
-        int[] expectedArr = new int[] {-2, 5, 8, 12, 18, 20};
+        int[] expectedArr = new int[] {5, 5, 5, 7, 7, 12};
         assertEquals(Arrays.toString(expectedArr), Arrays.toString(actualArr));
     }
 
