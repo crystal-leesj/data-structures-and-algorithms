@@ -474,3 +474,32 @@ Merge sort is a “divide and conquer” algorithm wherein we first divide the p
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/merge-sort3.jpg "merge sort")
 
 ***
+
+# Challenge Summary
+Quick Sort
+
+## Challenge Description
+Quicksort is a sorting algorithm, which is leveraging the divide-and-conquer principle. It has an average O(n log n) complexity and it’s one of the most used sorting algorithms, especially for big data volumes.
+
+It's important to remember that Quicksort isn't a stable algorithm. A stable sorting algorithm is an algorithm where the elements with the same values appear in the same order in the sorted output as they appear in the input list.
+
+The input list is divided into two sub-lists by an element called pivot; one sub-list with elements less than the pivot and another one with elements greater than the pivot. This process repeats for each sub-list.
+
+Finally, all sorted sub-lists merge to form the final output.
+
+Resource = https://www.baeldung.com/java-quicksort
+    
+## Approach & Efficiency
+- In the worst case:
+   - Time: O(n2)
+- In the best case:
+   - Time:  \theta(n log n)
+- In the average case:
+   - Time:  0(n log n)
+- Space: O(log(n)) 
+   - The sort algorithm is creating temporary arrays in every recursive call
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/quick-sort.jpg "quick sort")
+
+***
