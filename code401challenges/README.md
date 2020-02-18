@@ -503,3 +503,23 @@ Resource = https://www.baeldung.com/java-quicksort
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/quick-sort.jpg "quick sort")
 
 ***
+
+# Hashtables
+Implement a Hashtable
+
+## Challenge
+1. `add`: takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
+2. `get`: takes in the key and returns the value from the table.
+3. `contains`: takes in the key and returns a boolean, indicating if the key exists in the table already.
+4. `hash`: takes in an arbitrary key and returns an index in the collection.
+
+## Approach & Efficiency
+- Time: O(1)
+   - If the key is provided value can be found in O(1).
+- Space: O(n)
+   - Because the values are fixed
+## API
+[Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/hashtable/Hashtable.java)
+
+
+***
