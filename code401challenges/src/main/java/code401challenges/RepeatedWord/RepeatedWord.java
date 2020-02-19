@@ -4,7 +4,7 @@ import java.util.*;
 
 public class RepeatedWord {
 
-    public static String getRepeatedWord(String inputString) {
+    public static String getMostRepeatedWord(String inputString) {
 
         String toLowercase = inputString.toLowerCase();
         String removedPunctuation = toLowercase.replace(",", "").replace(".", "");
