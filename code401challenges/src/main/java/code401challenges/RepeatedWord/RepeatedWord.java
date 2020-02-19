@@ -4,6 +4,27 @@ import java.util.*;
 
 public class RepeatedWord {
 
+    public static String getFirstRepeatedWord(String inputString) {
+
+        String toLowercase = inputString.toLowerCase();
+        String removedPunctuation = toLowercase.replace(",", "").replace(".", "");
+        String[] splitted = removedPunctuation.split(" ");
+
+        Map<String, Integer> table = new Hashtable<>();
+
+        String result = "";
+        for (String s : splitted) {
+            System.out.println("splitted[i] = " + s);
+            if (!table.containsKey(s)) {
+                table.put(s, 1);
+            } else {
+                result = s;
+                break;
+            }
+        }
+        return result;
+    }
+
     public static String getMostRepeatedWord(String inputString) {
 
         String toLowercase = inputString.toLowerCase();
