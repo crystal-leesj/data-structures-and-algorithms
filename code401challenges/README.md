@@ -521,5 +521,20 @@ Implement a Hashtable
 ## API
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/hashtable/Hashtable.java)
 
+***
 
+# Challenge Summary
+Find the first repeated word in a book.
+
+## Challenge Description
+- Write a function that accepts a lengthy string parameter.
+- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+## Approach & Efficiency
+- Time: O(1)
+   - If the key is provided value can be found in O(1).
+- Space: O(n)
+   - Because the values are fixed
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/repeatedWord.jpg "RepeatedWord")
 ***
