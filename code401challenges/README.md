@@ -537,4 +537,21 @@ Find the first repeated word in a book.
    - Because the values are fixed
 ## Solution
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/repeatedWord.jpg "RepeatedWord")
+
+***
+
+# Challenge Summary
+Find common values in 2 binary trees.
+
+## Challenge Description
+- Write a function called `tree_intersection` that takes two binary tree parameters.
+- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+## Approach & Efficiency
+- Time: O(n)
+   - Two different trees were used.
+- Space: O(n)
+   - Because the values are fixed
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/tree_intersection.jpg "tree_intersection")
 ***
