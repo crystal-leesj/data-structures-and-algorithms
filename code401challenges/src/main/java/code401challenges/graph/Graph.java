@@ -7,18 +7,16 @@ import java.util.*;
 public class Graph<T> {
     public static void main (String[] args) {
         // Object of graph is created.
-        Graph<Integer> g = new Graph<Integer>();
+        Graph<String> g = new Graph<String>();
 
-        // edges are added.
-        // Since the graph is bidirectional,
-        // so boolean bidirectional is passed as true.
-        g.addEdge(0, 1,1);
-        g.addEdge(0, 4, 2);
-        g.addEdge(1, 2,1);
-        g.addEdge(1, 3, 1);
-        g.addEdge(1, 4, 1);
-        g.addEdge(2, 3, 2);
-        g.addEdge(3, 4, 1);
+        g.addEdge("Pandora", "Arendelle",null);
+        g.addEdge("Arendelle", "Metroville", null);
+        g.addEdge("Arendelle", "Monstroplolis",null);
+        g.addEdge("Metroville", "Monstroplolis", null);
+        g.addEdge("Metroville", "Narnia", null);
+        g.addEdge("Metroville", "Naboo", null);
+        g.addEdge("Monstroplolis", "Naboo", null);
+        g.addEdge("Narnia", "Naboo", null);
 
         // print the graph.
         System.out.println("Graph:\n" + g.toString());
@@ -28,12 +26,18 @@ public class Graph<T> {
 
         System.out.println("The graph has " + g.getNodes() + " nodes");
 
-        g.getNeighbors(0);
+        g.getNeighbors("Pandora");
 
+//        g.getBFTraversal("Pandora");
+        System.out.println("The graph has BST " + g.getBFTraversal("Pandora"));
     }
 
     // We use Hashmap to store the edges in the graph
     private Map<T, Map<T, T>> map = new HashMap<>();
+
+    public Graph() {
+
+    }
 
     // This function adds a new vertex to the graph
     public T addNode(T newNode) {
@@ -77,6 +81,24 @@ public class Graph<T> {
             }
         }
         return llist;
+    }
+
+    public Set<String> getBFTraversal(String root) {
+        Set<String> visited = new LinkedHashSet<>();
+        Queue<String> queue = new LinkedList<>();
+        queue.add(root);
+        visited.add(root);
+        while (!queue.isEmpty()) {
+            String vertex = queue.poll();
+
+            for (T v : getNeighbors((T) vertex)) {
+                if (!visited.contains(v.toString())) {
+                    visited.add(v.toString());
+                    queue.add(v.toString());
+                }
+            }
+        }
+        return visited;
     }
 
 
