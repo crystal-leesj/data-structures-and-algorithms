@@ -2,7 +2,7 @@ package code401challenges.graph;
 
 import java.util.*;
 
-// RESOURCE : https://www.geeksforgeeks.org/implementing-generic-graph-in-java/
+// RESOURCE : https://www.geeksforgeeks.org/implementing-generic-graph-in-java/, https://algorithms.tutorialhorizon.com/weighted-graph-implementation-java/
 
 public class Graph<T> {
     public static void main (String[] args) {
@@ -12,13 +12,13 @@ public class Graph<T> {
         // edges are added.
         // Since the graph is bidirectional,
         // so boolean bidirectional is passed as true.
-        g.addEdge(0, 1);
-        g.addEdge(0, 4);
-        g.addEdge(1, 2);
-        g.addEdge(1, 3);
-        g.addEdge(1, 4);
-        g.addEdge(2, 3);
-        g.addEdge(3, 4);
+        g.addEdge(0, 1,1);
+        g.addEdge(0, 4, 2);
+        g.addEdge(1, 2,1);
+        g.addEdge(1, 3, 1);
+        g.addEdge(1, 4, 1);
+        g.addEdge(2, 3, 2);
+        g.addEdge(3, 4, 1);
 
         // print the graph.
         System.out.println("Graph:\n" + g.toString());
@@ -26,31 +26,35 @@ public class Graph<T> {
         // gives the no of vertices in the graph.
         System.out.println("The graph has " + g.getNodeSize() + " vertex");
 
+        System.out.println("The graph has " + g.getNodes() + " nodes");
+
+        g.getNeighbors(0);
+
     }
 
     // We use Hashmap to store the edges in the graph
-    private Map<T, List<T>> map = new HashMap<>();
+    private Map<T, Map<T, T>> map = new HashMap<>();
 
     // This function adds a new vertex to the graph
     public T addNode(T newNode) {
-        map.put(newNode, new LinkedList<T>());
+        map.put(newNode, new HashMap<>());
         return newNode;
     }
 
     // This function adds the edge
     // between source to destination
-    public void addEdge(T source, T destination) {
+    public void addEdge(T source, T destination, T weight) {
 
         // when there is no connections
         if (!map.containsKey(source)) {
-            addNode(source);
+            T node = addNode(source);
         }
         if (!map.containsKey(destination)) {
-            addNode(destination);
+            T node = addNode(destination);
         }
 
-        map.get(source).add(destination);
-        map.get(destination).add(source);
+        map.get(source).put(destination, weight);
+        map.get(destination).put(source, weight);
     }
 
     public Set<T> getNodes() {
@@ -62,8 +66,17 @@ public class Graph<T> {
         return map.keySet().size();
     }
 
-    public List<T> getNeighbors(LinkedList<T> node) {
-        return map.get(node);
+    public List<T> getNeighbors(T node) {
+        List<T> llist= new LinkedList<>();
+        for (T v : map.keySet()) {
+            if (v == node) {
+                for (T w : map.get(v).keySet()) {
+//                    System.out.println("w.toString() = " + w.toString());
+                    llist.add(w);
+                }
+            }
+        }
+        return llist;
     }
 
 
@@ -76,11 +89,13 @@ public class Graph<T> {
 
         for (T v : map.keySet()) {
             builder.append(v.toString() + ": ");
-            for (T w : map.get(v)) {
+            for (T w : map.get(v).keySet()) {
                 builder.append(w.toString() + " ");
             }
             builder.append("\n");
         }
+
+        System.out.println("entrySet = " + map.entrySet());
 
         return (builder.toString());
     }
