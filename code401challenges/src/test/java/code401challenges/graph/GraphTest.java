@@ -90,4 +90,40 @@ public class GraphTest {
         g.addEdge(3, 4, 1);
         assertEquals(5, g.getNodeSize());
     }
+
+    @Test
+    public void testGetBFTraversal() {
+        Graph<String> g = new Graph<String>();
+        assertEquals(0, g.getNodeSize());
+        g.addEdge("Pandora", "Arendelle",null);
+        g.addEdge("Arendelle", "Metroville", null);
+        g.addEdge("Arendelle", "Monstroplolis",null);
+        g.addEdge("Metroville", "Monstroplolis", null);
+        g.addEdge("Metroville", "Narnia", null);
+        g.addEdge("Metroville", "Naboo", null);
+        g.addEdge("Monstroplolis", "Naboo", null);
+        g.addEdge("Narnia", "Naboo", null);
+        assertEquals(6, g.getNodeSize());
+        assertTrue(g.getNodes().contains("Pandora"));
+        assertTrue(g.getNodes().contains("Arendelle"));
+        assertTrue(g.getNodes().contains("Metroville"));
+        assertTrue(g.getNodes().contains("Monstroplolis"));
+        assertTrue(g.getNodes().contains("Narnia"));
+        assertTrue(g.getNodes().contains("Naboo"));
+        Set<String> s = new HashSet<>();
+        s = g.getBFTraversal("Pandora");
+        int n = s.size();
+        List<String> actual = new ArrayList<String>(n);
+        for (String x : s)
+            actual.add(x);
+
+        LinkedList<String> expected = new LinkedList<>();
+        expected.add("Pandora");
+        expected.add("Arendelle");
+        expected.add("Metroville");
+        expected.add("Monstroplolis");
+        expected.add("Narnia");
+        expected.add("Naboo");
+        assertEquals(expected, actual);
+    }
 }

@@ -592,3 +592,20 @@ Graph Implementation
 [Link to code](https://github.com/crystal-leesj/data-structures-and-algorithms/tree/master/code401challenges/src/main/java/code401challenges/graph/Graph.java)
 
 ***
+
+# Graphs
+Implement a breadth-first traversal on a graph.
+
+## Challenge
+Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+## Approach & Efficiency
+- Time: O(1)
+   - Set and LinkedList was user to find the target key.
+- Space: O(n)
+   - Because the values are fixed.
+
+## API
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/graph-bsftaversal.jpg "graph-bsftaversal")
+
+***
