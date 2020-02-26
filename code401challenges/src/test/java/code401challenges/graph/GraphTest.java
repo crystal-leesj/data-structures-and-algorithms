@@ -93,7 +93,7 @@ public class GraphTest {
 
     @Test
     public void testGetBFTraversal() {
-        Graph<String> g = new Graph<String>();
+        Graph<String> g = new Graph<>();
         assertEquals(0, g.getNodeSize());
         g.addEdge("Pandora", "Arendelle",null);
         g.addEdge("Arendelle", "Metroville", null);
@@ -114,8 +114,7 @@ public class GraphTest {
         s = g.getBFTraversal("Pandora");
         int n = s.size();
         List<String> actual = new ArrayList<String>(n);
-        for (String x : s)
-            actual.add(x);
+        actual.addAll(s);
 
         LinkedList<String> expected = new LinkedList<>();
         expected.add("Pandora");
@@ -125,5 +124,53 @@ public class GraphTest {
         expected.add("Narnia");
         expected.add("Naboo");
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetEdge() {
+        Graph<String> g = new Graph<>();
+        assertEquals(0, g.getNodeSize());
+        g.addEdge("Pandora", "Arendelle","150");
+        g.addEdge("Pandora", "Metroville","82");
+        g.addEdge("Arendelle", "Metroville", "99");
+        g.addEdge("Arendelle", "Monstroplolis","42");
+        g.addEdge("Metroville", "Monstroplolis", "105");
+        g.addEdge("Metroville", "Narnia", "37");
+        g.addEdge("Metroville", "Naboo", "26");
+        g.addEdge("Monstroplolis", "Naboo", "73");
+        g.addEdge("Narnia", "Naboo", "250");
+        assertEquals(6, g.getNodeSize());
+        assertTrue(g.getNodes().contains("Pandora"));
+        assertTrue(g.getNodes().contains("Arendelle"));
+        assertTrue(g.getNodes().contains("Metroville"));
+        assertTrue(g.getNodes().contains("Monstroplolis"));
+        assertTrue(g.getNodes().contains("Narnia"));
+        assertTrue(g.getNodes().contains("Naboo"));
+
+        List<String> travel1 = new ArrayList<>();
+        travel1.add("Metroville");
+        travel1.add("Pandora");
+        String actual = g.getEdge(travel1);
+        assertEquals("True, $82", actual);
+
+        List<String> travel2 = new ArrayList<>();
+        travel2.add("Arendelle");
+        travel2.add("Monstroplolis");
+        travel2.add("Naboo");
+        actual = g.getEdge(travel2);
+        assertEquals("True, $115", actual);
+
+        List<String> travel3 = new ArrayList<>();
+        travel3.add("Naboo");
+        travel3.add("Pandora");
+        actual = g.getEdge(travel3);
+        assertEquals("False, $0", actual);
+
+        List<String> travel4 = new ArrayList<>();
+        travel4.add("Narnia");
+        travel4.add("Arendelle");
+        travel4.add("Naboo");
+        actual = g.getEdge(travel4);
+        assertEquals("False, $0", actual);
     }
 }
