@@ -5,32 +5,40 @@ import java.util.*;
 // RESOURCE : https://www.geeksforgeeks.org/implementing-generic-graph-in-java/, https://algorithms.tutorialhorizon.com/weighted-graph-implementation-java/
 
 public class Graph<T> {
-    public static void main (String[] args) {
-        // Object of graph is created.
-        Graph<String> g = new Graph<String>();
-
-        g.addEdge("Pandora", "Arendelle",null);
-        g.addEdge("Arendelle", "Metroville", null);
-        g.addEdge("Arendelle", "Monstroplolis",null);
-        g.addEdge("Metroville", "Monstroplolis", null);
-        g.addEdge("Metroville", "Narnia", null);
-        g.addEdge("Metroville", "Naboo", null);
-        g.addEdge("Monstroplolis", "Naboo", null);
-        g.addEdge("Narnia", "Naboo", null);
-
-        // print the graph.
-        System.out.println("Graph:\n" + g.toString());
-
-        // gives the no of vertices in the graph.
-        System.out.println("The graph has " + g.getNodeSize() + " vertex");
-
-        System.out.println("The graph has " + g.getNodes() + " nodes");
-
-        g.getNeighbors("Pandora");
-
-//        g.getBFTraversal("Pandora");
-        System.out.println("The graph has BST " + g.getBFTraversal("Pandora"));
-    }
+//    public static void main (String[] args) {
+//        // Object of graph is created.
+//        Graph<String> g = new Graph<>();
+//
+//        g.addEdge("Pandora", "Arendelle","150");
+//        g.addEdge("Pandora", "Metroville","82");
+//        g.addEdge("Arendelle", "Metroville", "99");
+//        g.addEdge("Arendelle", "Monstroplolis","42");
+//        g.addEdge("Metroville", "Monstroplolis", "105");
+//        g.addEdge("Metroville", "Narnia", "37");
+//        g.addEdge("Metroville", "Naboo", "26");
+//        g.addEdge("Monstroplolis", "Naboo", "73");
+//        g.addEdge("Narnia", "Naboo", "250");
+//
+//        // print the graph.
+//        System.out.println("Graph:\n" + g.toString());
+//
+//        // gives the no of vertices in the graph.
+//        System.out.println("The graph has " + g.getNodeSize() + " vertex");
+//
+//        System.out.println("The graph has " + g.getNodes() + " nodes");
+//
+//        g.getNeighbors("Pandora");
+//
+//        System.out.println("The graph has BST " + g.getBFTraversal("Pandora"));
+//
+//        List<String> travel1 = new ArrayList<>();
+//        travel1.add("Arendelle");
+//        travel1.add("Monstroplolis");
+//        travel1.add("Naboo");
+//        System.out.println("Travel: " + g.getEdge(travel1));
+//
+//
+//    }
 
     // We use Hashmap to store the edges in the graph
     private Map<T, Map<T, T>> map = new HashMap<>();
@@ -101,7 +109,29 @@ public class Graph<T> {
         return visited;
     }
 
+    public String getEdge(List<String> travel) {
+        String result;
+        for (String city : travel) {
+            if (!map.containsKey(city)) {
+                result = "False, $0";
+                return result;
+            }
+        }
 
+        int total = 0;
+        for (int i = 0; i < travel.size()-1; i++) {
+            if (!getNeighbors((T)travel.get(i)).contains(travel.get(i+1))) {
+                result = "False, $0";
+                return result;
+            } else {
+                T w = map.get(travel.get(i)).get(travel.get(i+1));
+                total += Integer.parseInt((String) w);
+            }
+        }
+        result = "True, $" + total;
+
+        return result;
+    }
 
     // Prints the adjancency list of each vertex.
     @Override
