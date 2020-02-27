@@ -173,4 +173,84 @@ public class GraphTest {
         actual = g.getEdge(travel4);
         assertEquals("False, $0", actual);
     }
+
+    @Test
+    public void testGetDFTraversal_case1() {
+        Graph<String> g = new Graph<>();
+        assertEquals(0, g.getNodeSize());
+        g.addEdge("A", "B",null);
+        g.addEdge("A", "D",null);
+        g.addEdge("B", "D", null);
+        g.addEdge("B", "C",null);
+        g.addEdge("C", "G", null);
+        g.addEdge("D", "E", null);
+        g.addEdge("D", "F", null);
+        g.addEdge("D", "H", null);
+        g.addEdge("F", "H", null);
+        assertEquals(8, g.getNodeSize());
+        assertTrue(g.getNodes().contains("A"));
+        assertTrue(g.getNodes().contains("B"));
+        assertTrue(g.getNodes().contains("C"));
+        assertTrue(g.getNodes().contains("D"));
+        assertTrue(g.getNodes().contains("E"));
+        assertTrue(g.getNodes().contains("F"));
+        assertTrue(g.getNodes().contains("G"));
+        assertTrue(g.getNodes().contains("H"));
+        Set<String> s = new HashSet<>();
+        s = g.getDFTraversal("A");
+        int n = s.size();
+        List<String> actual = new ArrayList<String>(n);
+        actual.addAll(s);
+
+        LinkedList<String> expected = new LinkedList<>();
+        expected.add("A");
+        expected.add("D");
+        expected.add("H");
+        expected.add("F");
+        expected.add("E");
+        expected.add("B");
+        expected.add("C");
+        expected.add("G");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetDFTraversal_case2() {
+        Graph<String> g = new Graph<>();
+        assertEquals(0, g.getNodeSize());
+        g.addEdge("A", "B",null);
+        g.addEdge("A", "D",null);
+        g.addEdge("B", "D", null);
+        g.addEdge("B", "C",null);
+        g.addEdge("C", "G", null);
+        g.addEdge("D", "E", null);
+        g.addEdge("D", "F", null);
+        g.addEdge("D", "H", null);
+        g.addEdge("F", "H", null);
+        assertEquals(8, g.getNodeSize());
+        assertTrue(g.getNodes().contains("A"));
+        assertTrue(g.getNodes().contains("B"));
+        assertTrue(g.getNodes().contains("C"));
+        assertTrue(g.getNodes().contains("D"));
+        assertTrue(g.getNodes().contains("E"));
+        assertTrue(g.getNodes().contains("F"));
+        assertTrue(g.getNodes().contains("G"));
+        assertTrue(g.getNodes().contains("H"));
+        Set<String> s = new HashSet<>();
+        s = g.getDFTraversal("G");
+        int n = s.size();
+        List<String> actual = new ArrayList<String>(n);
+        actual.addAll(s);
+
+        LinkedList<String> expected = new LinkedList<>();
+        expected.add("G");
+        expected.add("C");
+        expected.add("B");
+        expected.add("D");
+        expected.add("H");
+        expected.add("F");
+        expected.add("E");
+        expected.add("A");
+        assertEquals(expected, actual);
+    }
 }

@@ -626,3 +626,20 @@ Write a function based on the specifications above, which takes in a graph, and 
 ![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/graph-get-edges.jpg "graph-get-edges")
 
 ***
+
+# Challenge Summary
+Conduct a depth first preorder traversal on a graph
+
+## Challenge Description
+Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Without utilizing any of the built-in methods available to your language, return a collection of nodes in their pre-order depth-first traversal order.
+
+## Approach & Efficiency
+- Time: n^2
+   - Used two different iterations.
+- Space: O(n)
+   - Because the values are fixed.
+
+## Solution
+![alt text](https://github.com/crystal-leesj/data-structures-and-algorithms/blob/master/code401challenges/assets/graph-dsftraversal.jpg "graph-dsftraversal")
+
+***

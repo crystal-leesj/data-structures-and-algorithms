@@ -9,15 +9,15 @@ public class Graph<T> {
 //        // Object of graph is created.
 //        Graph<String> g = new Graph<>();
 //
-//        g.addEdge("Pandora", "Arendelle","150");
-//        g.addEdge("Pandora", "Metroville","82");
-//        g.addEdge("Arendelle", "Metroville", "99");
-//        g.addEdge("Arendelle", "Monstroplolis","42");
-//        g.addEdge("Metroville", "Monstroplolis", "105");
-//        g.addEdge("Metroville", "Narnia", "37");
-//        g.addEdge("Metroville", "Naboo", "26");
-//        g.addEdge("Monstroplolis", "Naboo", "73");
-//        g.addEdge("Narnia", "Naboo", "250");
+//        g.addEdge("A", "B",null);
+//        g.addEdge("A", "D",null);
+//        g.addEdge("B", "D", null);
+//        g.addEdge("B", "C",null);
+//        g.addEdge("C", "G", null);
+//        g.addEdge("D", "E", null);
+//        g.addEdge("D", "F", null);
+//        g.addEdge("D", "H", null);
+//        g.addEdge("F", "H", null);
 //
 //        // print the graph.
 //        System.out.println("Graph:\n" + g.toString());
@@ -29,13 +29,10 @@ public class Graph<T> {
 //
 //        g.getNeighbors("Pandora");
 //
-//        System.out.println("The graph has BST " + g.getBFTraversal("Pandora"));
+//        System.out.println("The graph has BST " + g.getBFTraversal("A"));
 //
-//        List<String> travel1 = new ArrayList<>();
-//        travel1.add("Arendelle");
-//        travel1.add("Monstroplolis");
-//        travel1.add("Naboo");
-//        System.out.println("Travel: " + g.getEdge(travel1));
+//        System.out.println("The graph has DST " + g.getDFTraversal("A"));
+//
 //
 //
 //    }
@@ -108,6 +105,25 @@ public class Graph<T> {
         }
         return visited;
     }
+
+    public Set<String> getDFTraversal(String root) {
+        Set<String> visited = new LinkedHashSet<>();
+        Stack<String> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            String vertex = stack.pop();
+            if (!visited.contains(vertex)) {
+                visited.add(vertex);
+
+                for (T v : getNeighbors((T) vertex)) {
+                    stack.push(v.toString());
+                }
+            }
+
+        }
+        return visited;
+    }
+//    A, B, C, G, D, E, H, F
 
     public String getEdge(List<String> travel) {
         String result;
